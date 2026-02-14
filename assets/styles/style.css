@@ -1,54 +1,89 @@
+@import url('animations.css');
+
+@font-face {
+    font-family: 'Monotype';
+    src:
+        url('../fonts/Monotype-Corsiva-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: Monotype, serif;
+    background: linear-gradient(180deg, #fff8f0, #ffe6e0);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
 .wedding-wrapper {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
-/* БУКВЫ */
-.letter {
-    display: inline-block;
-    font-family: Georgia, serif;
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    width: 600px;
+    height: 600px;
+    font-family: Monotype, serif;
     font-size: 150px;
     font-weight: 100;
+}
+
+/* И */
+.logo_letter-left {
+    left: 120px;
+    top: 40px;
+    position: absolute;
+    animation: fadeLeft 2s ease forwards;
+
+}
+
+.logo_image {
+    position: absolute;
+    width: 900px;
     opacity: 0;
+    transform: scale(0.3);
+    height: auto;
+    margin: 0 20px;
+    animation: heartPopImage 2s ease forwards;
 }
 
-/* Запуск анимации через класс */
-.wedding-wrapper.animate .left {
-    animation: fadeLeft 3s ease forwards;
-}
-
-.wedding-wrapper.animate .right {
+/* Е */
+.letter.right {
+    right: 60px;
+    bottom: 80px;
+    position: absolute;
     animation: fadeRight 3s ease forwards;
 }
 
-@keyframes fadeLeft {
-    from {
-        opacity: 0;
-        transform: translateX(-80px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
+.wedding-title {
+    position: relative;
+    display: inline-block;
+    height: 200px; /* контролируем область */
 }
 
-@keyframes fadeRight {
-    from {
-        opacity: 0;
-        transform: translateX(80px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
 
 /* ИМЕНА */
 .names {
     margin-top: 30px;
-    font-family: 'GoodVibesPro', cursive;
-    font-size: 48px;
+    font-size: 80px;
     letter-spacing: 4px;
     opacity: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    overflow: hidden;
 }
 
 .wedding-wrapper.animate .names {
@@ -56,16 +91,7 @@
     animation-delay: 1s;
 }
 
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(40px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+
 .invite {
     text-align: center;
     max-width: 600px;
@@ -111,28 +137,6 @@
     animation-delay: 1.2s;
 }
 
-/* Анимация */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-.names {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    font-family: 'GoodVibesPro', cursive;
-    font-size: 64px;
-    color: #000;
-    overflow: hidden;
-}
-
 /* Имена */
 .name {
     opacity: 0;
@@ -147,52 +151,6 @@
 .name.right {
     transform: translateX(120px);
     animation: slideRight 2s ease forwards;
-}
-
-/* Сердечко */
-.heart {
-    font-size: 42px;
-    color: #c0392b;
-    opacity: 0;
-    transform: scale(0.3);
-    animation: heartPop 1.2s ease forwards;
-    animation-delay: 1.4s;
-}
-
-/* Анимации */
-@keyframes slideLeft {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes slideRight {
-    to {
-        opacity: 1;
-        transform: translateX(0);
-    }
-}
-
-@keyframes heartPop {
-    0% {
-        opacity: 0;
-        transform: scale(0.3);
-    }
-    60% {
-        opacity: 1;
-        transform: scale(1.2);
-    }
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-.wedding-title .heart {
-    font-size: 90px;
-    color: #c0392b;
-    margin: 0 20px;
-    opacity: 0;
 }
 
 .wedding-wrapper.animate .wedding-title .heart {
@@ -247,79 +205,21 @@
 /*конец счетчика*/
 
 
-body {
-    font-family: Georgia, serif;
-    background: linear-gradient(180deg, #fff8f0, #ffe6e0);
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
-
-/* ===== Секция названия ===== */
-.wedding-wrapper {
-    text-align: center;
-    padding: 50px 20px 20px 20px;
-}
-
-.letter {
-    display: inline-block;
-    font-family: Georgia, serif;
-    font-size: 150px;
-    font-weight: 100;
-    opacity: 0;
-}
-
-.wedding-wrapper.animate .left {
-    animation: fadeLeft 2s ease forwards;
-}
-
-.wedding-wrapper.animate .right {
-    animation: fadeRight 2s ease forwards;
-}
-
-@keyframes fadeLeft {
-    from { opacity: 0; transform: translateX(-80px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-@keyframes fadeRight {
-    from { opacity: 0; transform: translateX(80px); }
-    to { opacity: 1; transform: translateX(0); }
-}
-
 .wedding-title .heart {
     font-size: 90px;
-    color: #e74c3c;
     margin: 0 20px;
     opacity: 0;
 }
 .wedding-wrapper.animate .wedding-title .heart {
     animation: heartPop 2s ease forwards;
 }
-@keyframes heartPop {
-    0% { opacity: 0; transform: scale(0.3); }
-    60% { opacity: 1; transform: scale(1.2); }
-    100% { opacity: 1; transform: scale(1); }
-}
 
-/* ===== Имена ===== */
-.names {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    font-family: 'Good Vibes', cursive;
-    font-size: 64px;
-    color: #c0392b;
-    opacity: 0;
-}
+
 .wedding-wrapper.animate .names {
     animation: fadeUp 2s ease forwards;
     animation-delay: 1s;
 }
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(40px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+
 
 /* ===== Картинка колец ===== */
 .rings {
@@ -371,11 +271,13 @@ body {
     color: #555;
 }
 
-/* ===== Карта ===== */
-iframe {
-    border-radius: 15px;
-    margin-top: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+/*sokol*/
+.sokol {
+    width: 100%;
+}
+.sokol img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* ===== Счётчик ===== */
@@ -422,4 +324,11 @@ iframe {
     margin-top: 5px;
     color: #555;
     text-transform: uppercase;
+}
+
+/* ===== Карта ===== */
+iframe {
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
