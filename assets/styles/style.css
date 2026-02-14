@@ -175,7 +175,6 @@ body {
     font-family: 'GoodVibesPro', cursive;
     font-size: 36px;
     margin-bottom: 30px;
-    color: #c0392b;
 }
 .countdown {
     display: flex;
@@ -194,7 +193,6 @@ body {
     display: block;
     font-size: 32px;
     font-weight: bold;
-    color: #c0392b;
 }
 .time-label {
     font-size: 14px;
@@ -248,7 +246,6 @@ body {
     font-family: 'Good Vibes', cursive;
     font-size: 46px;
     margin-bottom: 25px;
-    color: #e74c3c;
 }
 .invite-text {
     font-size: 20px;
@@ -294,7 +291,6 @@ body {
     font-family: 'Good Vibes', cursive;
     font-size: 36px;
     margin-bottom: 30px;
-    color: #e74c3c;
 }
 .countdown {
     display: flex;
@@ -317,7 +313,6 @@ body {
     display: block;
     font-size: 32px;
     font-weight: bold;
-    color: #e74c3c;
 }
 .time-label {
     font-size: 14px;
